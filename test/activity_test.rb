@@ -5,23 +5,26 @@ require './lib/activity'
 
 class ActivityTest < Minitest::Test
     
-   def setup
-     Activity.new('Fencing', {'Joe' => 30, 'Sally' => 40, "Bill" => 50}, 120)
-   end 
+    def setup
+        Activity.new('Fencing', {'Joe' => 30, 'Sally' => 40, "Bill" => 50}, 120)
+    end 
    
     def test_activity_has_name
         activity = setup
+        
         assert_equal 'Fencing' , activity.name
     end 
 
     def test_activity_has_participants
         activity = setup
+        
         assert_equal 30, activity.participants['Joe']
         assert_equal 40, activity.participants['Sally']
     end 
 
     def test_can_add_up_total_cost
         activity = setup
+        
         assert_equal 120, activity.total_paid
     end 
 
